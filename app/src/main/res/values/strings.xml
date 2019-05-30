@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Focus Development</string>
+    <string name="app_game_instructions">This is a number game which helps you to develop focus. Pick a type of game.</string>
+    <string name="number_game_instructions_BIGGER">Click the BIGGER number.</string>
+    <string name="number_game_instructions_BIGGEST">Click the BIGGEST number.</string>
+    <string name="number_game_instructions_SMALLER">Click the SMALLER number.</string>
+    <string name="number_game_instructions_SMALLEST">Click the SMALLEST number.</string>
+    <string name="score_label">Score:</string>
+    <string name="lives_label">Chances:</string>
+</resources>
