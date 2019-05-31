@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BlueRoundedButton" parent="@android:style/Widget.Button">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="android:shadowColor">#A8A8A8</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:layout_height">100dp</item>
+    </style>
+
 </resources>
