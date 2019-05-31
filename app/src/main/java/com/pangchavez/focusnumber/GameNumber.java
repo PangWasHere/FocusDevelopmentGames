@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 // TODO: Create level where the game mode changes randomly
+// TODO: Make an efficient way to randomize numbers with big numbers
+    // For numbers with less than 100 items as range, create an array instead and randomize the index.
 
 public class GameNumber {
     // Numbers will be randomly generated from 0 to 65,535
@@ -21,7 +23,7 @@ public class GameNumber {
     final String BIG_MODE = "BIG";
     final String SMALL_MODE = "SMALL";
 
-    final int chancesGiven = 10;
+    final int chancesGiven = 5;
     int numberOfChoices;
     int _level;
     String _mode;
