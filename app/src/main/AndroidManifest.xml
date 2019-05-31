@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/ic_launcher_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FourNumberGameActivity"></activity>
+        <activity android:name=".NumberGameActivity"></activity>
+        <activity android:name=".FourNumberGameActivity" />
         <activity android:name=".GameOverActivity" />
         <activity android:name=".TwoNumberGameActivity" />
         <activity android:name=".MainActivity">
