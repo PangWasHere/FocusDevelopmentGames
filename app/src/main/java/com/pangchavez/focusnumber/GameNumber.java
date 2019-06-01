@@ -11,13 +11,6 @@ import java.util.Random;
 
 public class GameNumber {
     // Numbers will be randomly generated from 0 to 65,535
-    // When the limit has been reached, the levels will reset
-
-    // These strings are for the view
-    final String BIGGER_MODE = "BIGGER";
-    final String BIGGEST_MODE = "BIGGEST";
-    final String SMALLER_MODE = "SMALLER";
-    final String SMALLEST_MODE = "SMALLEST";
 
     // These strings are to check the mode of the game
     public static final String BIG_MODE = "BIG";
@@ -50,16 +43,6 @@ public class GameNumber {
     public int getChancesRemaining(){ return chances; }
 
     public long getScore(){ return score; }
-
-    public int getFirstNumber()
-    {
-        return numbers[0];
-    }
-
-    public int getSecondNumber()
-    {
-        return numbers[1];
-    }
 
     public int getNumberWithPosition(int position)
     {
@@ -107,51 +90,25 @@ public class GameNumber {
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
             case 7:
-                // Changing mode
-                RandomMode();
-                createNewNumbers(101, 999);
-                break;
-            case 8:
-                // Changing mode
-                RandomMode();
-                range = createLevelRanges(10, 10, 10);
-                rangeStart = giveRandomNumberFromArray(range);
-                createNewNumbers(rangeStart, rangeStart + 9);
-                break;
-            case 9:
-                RandomMode();
-                // Three digit numbers grouped by hundreds (100 - 199, 200 - 299, ...)
-                range = createLevelRanges(100, 10, 100);
-                rangeStart = giveRandomNumberFromArray(range);
-                createNewNumbers(rangeStart, rangeStart + 9);
-                break;
-            case 10:
-                RandomMode();
-                // Three digit numbers grouped by tens (101 - 109, 110 - 119, 120 - 129, ...)
-                range = createLevelRanges(100, 100, 10);
-                rangeStart = giveRandomNumberFromArray(range);
-                createNewNumbers(rangeStart, rangeStart + 9);
-                break;
-            case 11:
                 // Four digit numbers grouped by thousands (1000 - 1999, 2000 - 2999, ...)
                 range = createLevelRanges(1000, 10, 1000);
                 rangeStart = giveRandomNumberFromArray(range);
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
-            case 12:
+            case 8:
                 // Four digit numbers grouped by hundreds (1000 - 1100, 1101 - 1200, 1201 - 1300, ...)
                 range = createLevelRanges(1000, 100, 100);
                 rangeStart = giveRandomNumberFromArray(range);
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
-            case 13:
+            case 9:
                 // Four digit numbers grouped by tens (1000 - 1010, 1011 - 1020, 1201 - 1300, ...)
                 // 1000 - 5000
                 range = createLevelRanges(1000, 500, 10);
                 rangeStart = giveRandomNumberFromArray(range);
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
-            case 14:
+            case 10:
                 // Four digit numbers grouped by tens (1000 - 1010, 1011 - 1020, 1201 - 1300, ...)
                 // 5000 - 10000
                 range = createLevelRanges(5000, 500, 10);
@@ -159,6 +116,8 @@ public class GameNumber {
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
         }
+
+        RandomMode();
 
         // Sort the numbers as basis for correct answer
         sortedNumbers = numbers.clone();
