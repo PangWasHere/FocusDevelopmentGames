@@ -18,11 +18,10 @@ public class MainActivity extends AppCompatActivity {
     public void BtnGameModeClick(View view)
     {
         Button btn = (Button)view;
-        Context btnContext = btn.getContext();
         Intent gameMode;
         String _mode = NumberGameActivity.FOUR_NUMBER_GAME_MODE;
 
-        if(btn.getText().toString().equalsIgnoreCase(btnContext.getResources().getString(R.string.game_mode_two_number)))
+        if(btn.getText().toString().equalsIgnoreCase(getString(R.string.game_mode_two_number)))
         {
             _mode = NumberGameActivity.TWO_NUMBER_GAME_MODE;
         }
@@ -30,5 +29,11 @@ public class MainActivity extends AppCompatActivity {
         gameMode = new Intent(this, NumberGameActivity.class);
         gameMode.putExtra("GAME_MODE", _mode);
         startActivity(gameMode);
+    }
+
+    public void BtnAboutClick(View view)
+    {
+        Intent about = new Intent(this, AboutActivity.class);
+        startActivity(about);
     }
 }

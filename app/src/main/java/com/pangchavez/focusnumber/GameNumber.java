@@ -20,8 +20,8 @@ public class GameNumber {
     final String SMALLEST_MODE = "SMALLEST";
 
     // These strings are to check the mode of the game
-    final String BIG_MODE = "BIG";
-    final String SMALL_MODE = "SMALL";
+    public static final String BIG_MODE = "BIG";
+    public static final String SMALL_MODE = "SMALL";
 
     final int chancesGiven = 5;
     int numberOfChoices;
@@ -107,28 +107,51 @@ public class GameNumber {
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
             case 7:
-                createNewNumbers(1001, 9999);
+                // Changing mode
+                RandomMode();
+                createNewNumbers(101, 999);
                 break;
             case 8:
+                // Changing mode
+                RandomMode();
+                range = createLevelRanges(10, 10, 10);
+                rangeStart = giveRandomNumberFromArray(range);
+                createNewNumbers(rangeStart, rangeStart + 9);
+                break;
+            case 9:
+                RandomMode();
+                // Three digit numbers grouped by hundreds (100 - 199, 200 - 299, ...)
+                range = createLevelRanges(100, 10, 100);
+                rangeStart = giveRandomNumberFromArray(range);
+                createNewNumbers(rangeStart, rangeStart + 9);
+                break;
+            case 10:
+                RandomMode();
+                // Three digit numbers grouped by tens (101 - 109, 110 - 119, 120 - 129, ...)
+                range = createLevelRanges(100, 100, 10);
+                rangeStart = giveRandomNumberFromArray(range);
+                createNewNumbers(rangeStart, rangeStart + 9);
+                break;
+            case 11:
                 // Four digit numbers grouped by thousands (1000 - 1999, 2000 - 2999, ...)
                 range = createLevelRanges(1000, 10, 1000);
                 rangeStart = giveRandomNumberFromArray(range);
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
-            case 9:
+            case 12:
                 // Four digit numbers grouped by hundreds (1000 - 1100, 1101 - 1200, 1201 - 1300, ...)
                 range = createLevelRanges(1000, 100, 100);
                 rangeStart = giveRandomNumberFromArray(range);
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
-            case 10:
+            case 13:
                 // Four digit numbers grouped by tens (1000 - 1010, 1011 - 1020, 1201 - 1300, ...)
                 // 1000 - 5000
                 range = createLevelRanges(1000, 500, 10);
                 rangeStart = giveRandomNumberFromArray(range);
                 createNewNumbers(rangeStart, rangeStart + 9);
                 break;
-            case 11:
+            case 14:
                 // Four digit numbers grouped by tens (1000 - 1010, 1011 - 1020, 1201 - 1300, ...)
                 // 5000 - 10000
                 range = createLevelRanges(5000, 500, 10);
@@ -211,7 +234,7 @@ public class GameNumber {
 
     private void evaluateLevel()
     {
-        if(consecutiveCorrectAnswer > (3 + _level) && _level < 10)
+        if(consecutiveCorrectAnswer > 3 && _level < 15)
         {
             // Level up
             _level++;
@@ -237,6 +260,19 @@ public class GameNumber {
         }
 
         return  level;
+    }
+
+    private void RandomMode()
+    {
+        Random randomNumberGenerator = new Random();
+        int determiner = randomNumberGenerator.nextInt(3);
+
+        if(determiner % 2 == 0)
+        {
+            _mode = BIG_MODE;
+        } else {
+            _mode = SMALL_MODE;
+        }
     }
 
 }

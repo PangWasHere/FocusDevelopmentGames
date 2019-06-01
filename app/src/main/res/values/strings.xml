@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Focus Development</string>
+    <string name="app_name">Focus Number</string>
     <string name="game_mode_two_number">2 - Number Game</string>
     <string name="game_mode_four_number">4 - Number Game</string>
     <string name="app_game_instructions">This is a number game which helps you to develop focus. Pick a type of game.</string>
@@ -9,4 +9,8 @@
     <string name="number_game_instructions_SMALLEST">Click the SMALLEST number.</string>
     <string name="score_label">Score:</string>
     <string name="lives_label">Chances:</string>
+    <string name="about_game">About Game</string>
+    <string name="about_game_description">Focus Number is one of the games of Focus Development app which helps the player to focus. At the moment, the app is under development for improvement.</string>
+    <string name="about_developer">About Developer</string>
+    <string name="about_developer_description">Pang is an enthusiastic developer who enjoys programming games and educational software. Find more of her projects in GitHub.</string>
 </resources>

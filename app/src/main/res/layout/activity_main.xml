@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_menu_bg"
+    android:layout_gravity="center"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:background="#AD61E1FD"
+        android:padding="8dp"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -26,7 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#BC5DE0FD"
+        android:padding="8dp"
         android:text="@string/app_game_instructions"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -44,6 +52,7 @@
 
     <Button
         android:id="@+id/button"
+        style="@style/BlueRoundedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -51,9 +60,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="2 - Number Game"
-        style="@style/BlueRoundedButton"
         android:onClick="BtnGameModeClick"
+        android:padding="8dp"
+        android:text="@string/game_mode_two_number"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -62,6 +71,7 @@
 
     <Button
         android:id="@+id/button2"
+        style="@style/BlueRoundedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -69,24 +79,24 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="4 - Number Game"
-        style="@style/BlueRoundedButton"
         android:onClick="BtnGameModeClick"
+        android:padding="8dp"
+        android:text="@string/game_mode_four_number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:onClick="BtnAboutClick"
         android:background="#3F51B5"
-        android:contentDescription="About Icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_help" />

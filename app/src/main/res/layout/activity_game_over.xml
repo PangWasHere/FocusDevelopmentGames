@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F19C9C"
     tools:context=".GameOverActivity">
 
     <TextView
@@ -68,6 +69,7 @@
 
     <Button
         android:id="@+id/button3"
+        style="@style/BlueRoundedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -86,6 +88,8 @@
 
     <Button
         android:id="@+id/goBackToMainMenu"
+        style="@style/BlueRoundedButton"
+        android:onClick="goBackToMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

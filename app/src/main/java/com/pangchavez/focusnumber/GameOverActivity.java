@@ -34,17 +34,9 @@ public class GameOverActivity extends AppCompatActivity {
 
     public void tryAgain(View view)
     {
-        Intent tryAgain = null;
-
-        String previousActivity = gameIntent.getStringExtra("FROM_ACTIVITY");
-
-        Log.v("PREVIOUS_ACTIVITY", previousActivity + " == " + FourNumberGameActivity.class.getSimpleName());
-        if(previousActivity.contains("FourNumberGameActivity"))
-        {
-            tryAgain = new Intent(this, FourNumberGameActivity.class);
-        } else {
-            tryAgain = new Intent(this, TwoNumberGameActivity.class);
-        }
+        String prev_game_mode = gameIntent.getStringExtra("GAME_MODE");
+        Intent tryAgain = new Intent(this, NumberGameActivity.class);
+        tryAgain.putExtra("GAME_MODE", prev_game_mode);
 
         startActivity(tryAgain);
     }
